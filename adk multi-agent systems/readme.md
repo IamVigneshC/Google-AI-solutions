@@ -63,9 +63,9 @@ In the upper right corner of the Cloud Shell Terminal panel, click the Open in n
 
 In the Cloud Shell Terminal, enter the following to open the Cloud Shell Editor to your home directory:
 
-'''
+```
 cloudshell workspace ~
-'''
+```
 
 Close any additional tutorial or Gemini panels that appear on the right side of the screen to save more of your window for your code editor.
 Throughout the rest of this lab, you can work in this window as your IDE with the Cloud Shell Editor and Cloud Shell Terminal.
