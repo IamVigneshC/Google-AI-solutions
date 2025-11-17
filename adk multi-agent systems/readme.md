@@ -52,6 +52,7 @@ The structure always begins with the agent defined in the root_agent variable (a
 In this lab environment, the Vertex AI API has been enabled for you. If you were to follow these steps in your own project, you would enable it by navigating to Vertex AI and following the prompt to enable it.
 
 Prepare a Cloud Shell Editor tab
+
 With your Google Cloud console window selected, open Cloud Shell by pressing the G key and then the S key on your keyboard. Alternatively, you can click the Activate Cloud Shell button (Activate Cloud Shell) in the upper right of the Cloud console.
 
 Click Continue.
@@ -61,8 +62,9 @@ When prompted to authorize Cloud Shell, click Authorize.
 In the upper right corner of the Cloud Shell Terminal panel, click the Open in new window button Open in new window button.
 
 In the Cloud Shell Terminal, enter the following to open the Cloud Shell Editor to your home directory:
-
+{
 cloudshell workspace ~
+}
 Copied!
 Close any additional tutorial or Gemini panels that appear on the right side of the screen to save more of your window for your code editor.
 Throughout the rest of this lab, you can work in this window as your IDE with the Cloud Shell Editor and Cloud Shell Terminal.
