@@ -29,7 +29,7 @@ Instruct agents to read values from the session state to use as context for thei
 Use workflow agents to pass the conversation between agents directly.
 
 
-###Task 1. Install ADK and set up your environment
+### Task 1. Install ADK and set up your environment
 In this lab environment, the Vertex AI API has been enabled for you. If you were to follow these steps in your own project, you would enable it by navigating to Vertex AI and following the prompt to enable it.
 
 Prepare a Cloud Shell Editor tab
@@ -58,7 +58,7 @@ export PATH=$PATH:"/home/${USER}/.local/bin"
 python3 -m pip install google-adk -r adk_multiagent_systems/requirements.txt
 Copied!
 
-###Task 2. Explore transfers between parent, sub-agent, and peer agents
+### Task 2. Explore transfers between parent, sub-agent, and peer agents
 The conversation always begins with the agent defined as the root_agent variable.
 
 The default behavior of a parent agent is to understand the description of each sub-agent and determine if control of the conversation should be transferred to a sub-agent at any point.
@@ -375,7 +375,7 @@ Assessment Completed!
 Begin building a multi-agent system with a SequentialAgent
 Assessment Completed!
 
-###Task 5. Add a LoopAgent for iterative work
+### Task 5. Add a LoopAgent for iterative work
 The LoopAgent executes its sub-agents in a defined sequence and then starts at the beginning of the sequence again without breaking for a user input. It repeats the loop until a number of iterations has been reached or a call to exit the loop has been made by one of its sub-agents (usually by calling a built-in exit_loop tool).
 
 This is beneficial for tasks that require continuous refinement, monitoring, or cyclical workflows. Examples include:
@@ -473,7 +473,7 @@ Using the Cloud Shell Editor, review the file generated, which should be saved i
 Click Check my progress to verify the objective.
 Add a LoopAgent for iterative work
 
-###Task 6. Use a "fan out and gather" pattern for report generation with a ParallelAgent
+### Task 6. Use a "fan out and gather" pattern for report generation with a ParallelAgent
 The ParallelAgent enables concurrent execution of its sub-agents. Each sub-agent operates in its own branch, and by default, they do not share conversation history or state directly with each other during parallel execution.
 
 This is valuable for tasks that can be divided into independent sub-tasks that can be processed simultaneously. Using a ParallelAgent can significantly reduce the overall execution time for such tasks.
