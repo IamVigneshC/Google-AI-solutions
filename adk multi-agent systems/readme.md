@@ -67,18 +67,18 @@ In the Cloud Shell Terminal, enter the following to open the Cloud Shell Editor 
 cloudshell workspace ~
 ```
 
-Close any additional tutorial or Gemini panels that appear on the right side of the screen to save more of your window for your code editor.
-Throughout the rest of this lab, you can work in this window as your IDE with the Cloud Shell Editor and Cloud Shell Terminal.
 Download and install ADK and code samples for this lab
-Paste the following commands into the Cloud Shell Terminal to copy code files from a Cloud Storage bucket for this lab:
 
+Paste the following commands into the Cloud Shell Terminal to copy code files from a Cloud Storage bucket for this lab:
+```
 gcloud storage cp -r gs://qwiklabs-gcp-04-bd46e7cad506-bucket/adk_multiagent_systems .
-Copied!
+```
 Update your PATH environment variable, install ADK, and install additional lab requirements by running the following commands in the Cloud Shell Terminal.
 
+````
 export PATH=$PATH:"/home/${USER}/.local/bin"
 python3 -m pip install google-adk -r adk_multiagent_systems/requirements.txt
-Copied!
+```
 
 ### Task 2. Explore transfers between parent, sub-agent, and peer agents
 The conversation always begins with the agent defined as the root_agent variable.
@@ -89,6 +89,7 @@ You can help guide those transfers in the parent's instruction by referring to t
 
 In the Cloud Shell Terminal, run the following to create a .env file to authenticate the agent in the parent_and_subagents directory.
 
+```
 cd ~/adk_multiagent_systems
 cat << EOF > parent_and_subagents/.env
 GOOGLE_GENAI_USE_VERTEXAI=TRUE
@@ -96,11 +97,14 @@ GOOGLE_CLOUD_PROJECT=qwiklabs-gcp-04-bd46e7cad506
 GOOGLE_CLOUD_LOCATION=global
 MODEL=gemini-2.5-flash
 EOF
-Copied!
+```
+
 Run the following command to copy that .env file to the workflow_agents directory, which you will use later in the lab:
 
+```
 cp parent_and_subagents/.env workflow_agents/.env
-Copied!
+```
+
 In the Cloud Shell Editor file explorer pane, navigate to the adk_multiagent_systems/parent_and_subagents directory.
 
 Click on the agent.py file to open it.
@@ -108,30 +112,40 @@ Click on the agent.py file to open it.
 Tip: Because Python code requires that we define our sub-agents before we can add them to an agent, in order to read an agent.py file in the order of the conversation flow, you may want to start reading with the bottom agent and work back towards the top.
 Notice that there are three agents here:
 
-a root_agent named steering (its name is used to identify it in ADK's dev UI and command line interfaces). It asks the user a question (if they know where they'd like to travel or if they need some help deciding), and the user's response to that question will help this steering agent know which of its two sub-agents to steer the conversation towards. Notice that it only has a simple instruction that does not mention the sub-agents, but it is aware of its sub-agents' descriptions.
-a travel_brainstormer that helps the user brainstorm destinations if they don't know where they would like to visit.
-an attractions_planner that helps the user build a list of things to do once they know which country they would like to visit.
+- a root_agent named steering (its name is used to identify it in ADK's dev UI and command line interfaces). It asks the user a question (if they know where they'd like to travel or if they need some help deciding), and the user's response to that question will help this steering agent know which of its two sub-agents to steer the conversation towards. Notice that it only has a simple instruction that does not mention the sub-agents, but it is aware of its sub-agents' descriptions.
+- a travel_brainstormer that helps the user brainstorm destinations if they don't know where they would like to visit.
+- an attractions_planner that helps the user build a list of things to do once they know which country they would like to visit.
+
 Make travel_brainstormer and attractions_planner sub-agents of the root_agent by adding the following line to the creation of the root_agent:
 
+```
 sub_agents=[travel_brainstormer, attractions_planner]
-Copied!
+```
+
 Save the file.
 
 Note that you don't add a corresponding parent parameter to the sub-agents. The hierarchical tree is defined only by specifying sub_agents when creating parent agents.
 
 In the Cloud Shell Terminal, run the following to use the ADK command line interface to chat with your agent:
 
+```
 cd ~/adk_multiagent_systems
 adk run parent_and_subagents
-Copied!
+```
+
 When you are presented the [user]: prompt, greet the agent with:
 
+```
 hello
-Copied!
+```
+
 Example output (yours may be a little different):
 
+```
 user: hello
 [steering]: Hi there! Do you already have a country in mind for your trip, or would you like some help deciding where to go?
+```
+
 Tell the agent:
 
 I could use some help deciding.
