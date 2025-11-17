@@ -1,108 +1,31 @@
 Build Multi-Agent Systems with ADK
 
 Objectives
-Setup and requirements
+
 Multi-Agent Systems
+
 Task 1. Install ADK and set up your environment
+
 Task 2. Explore transfers between parent, sub-agent, and peer agents
+
 Task 3. Use session state to store and retrieve specific information
 Workflow Agents
+
 Task 4. Begin building a multi-agent system with a SequentialAgent
+
 Task 5. Add a LoopAgent for iterative work
+
 Task 6. Use a "fan out and gather" pattern for report generation with a ParallelAgent
-Custom workflow agents
-Congratulations!
-GENAI106
-Google Cloud Self-Paced Labs
 
-Overview
-This lab covers orchestrating multi-agent systems within the Google Agent Development Kit (Google ADK).
 
-This lab assumes that you are familiar with the basics of ADK and tool use as covered in the labs:
-
-Get started with Google Agent Development Kit (ADK)
-Empower ADK agents with tools
-Objectives
-In this lab, you will:
 
 Create multiple agents and relate them to one another with parent to sub-agent relationships.
+
 Build content across multiple turns of conversation and multiple agents by writing to a session's state dictionary.
+
 Instruct agents to read values from the session state to use as context for their responses.
 Use workflow agents to pass the conversation between agents directly.
-Setup and requirements
-Before you click the Start Lab button
-Read these instructions. Labs are timed and you cannot pause them. The timer, which starts when you click Start Lab, shows how long Google Cloud resources will be made available to you.
 
-This Qwiklabs hands-on lab lets you do the lab activities yourself in a real cloud environment, not in a simulation or demo environment. It does so by giving you new, temporary credentials that you use to sign in and access Google Cloud for the duration of the lab.
-
-What you need
-To complete this lab, you need:
-
-Access to a standard internet browser (Chrome browser recommended).
-Time to complete the lab.
-Note: If you already have your own personal Google Cloud account or project, do not use it for this lab.
-
-Note: If you are using a Pixelbook, open an Incognito window to run this lab.
-
-How to start your lab and sign in to the Google Cloud console
-Click the Start Lab button. If you need to pay for the lab, a dialog opens for you to select your payment method. On the left is the Lab Details pane with the following:
-
-The Open Google Cloud console button
-Time remaining
-The temporary credentials that you must use for this lab
-Other information, if needed, to step through this lab
-Click Open Google Cloud console (or right-click and select Open Link in Incognito Window if you are running the Chrome browser).
-
-The lab spins up resources, and then opens another tab that shows the Sign in page.
-
-Tip: Arrange the tabs in separate windows, side-by-side.
-
-Note: If you see the Choose an account dialog, click Use Another Account.
-If necessary, copy the Username below and paste it into the Sign in dialog.
-
-student-01-312c2a80c8fc@qwiklabs.net
-Copied!
-You can also find the Username in the Lab Details pane.
-
-Click Next.
-
-Copy the Password below and paste it into the Welcome dialog.
-
-OYxJDNEvGg2a
-Copied!
-You can also find the Password in the Lab Details pane.
-
-Click Next.
-
-Important: You must use the credentials the lab provides you. Do not use your Google Cloud account credentials.
-Note: Using your own Google Cloud account for this lab may incur extra charges.
-Click through the subsequent pages:
-
-Accept the terms and conditions.
-Do not add recovery options or two-factor authentication (because this is a temporary account).
-Do not sign up for free trials.
-After a few moments, the Google Cloud console opens in this tab.
-
-Note: To access Google Cloud products and services, click the Navigation menu or type the service or product name in the Search field. Navigation menu icon and Search field
-Multi-Agent Systems
-The Agent Development Kit empowers developers to get more reliable, sophisticated, multi-step behaviors from generative models. Instead of writing long, complex prompts that may not deliver results reliably, you can construct a flow of multiple, simple agents that can collaborate on complex problems by dividing tasks and responsibilities.
-
-This architectural approach offers several key advantages such as:
-
-Easier to design: You can think in terms of agents with specific jobs and skills.
-Specialized functions with more reliable performance: Specialized agents can learn from clear examples to become more reliable at their specific tasks.
-Organization: Dividing the workflow into distinct agents allows for a more organized, and therefor easier to think about, approach.
-Improvability and maintainability: It is easier to improve or fix a specialized component rather than make changes to a complex agent that may fix one behavior but might impact others.
-Modularity: Distinct agents from one workflow can be easily copied and included in other similar workflows.
-The Hierarchical Agent Tree
-Tree structure showing hierarchical agents
-
-In Agent Development Kit, you organize your agents in a tree-like structure. This helps limit the options for transfers for each agent in the tree, making it easier to control and predict the possible routes the conversation can take through the tree. Benefits of the hierarchical structure include:
-
-It draws inspiration from real-world collaborative teams, making it easier to design and reason about the behavior of the multi-agent system.
-It is intuitive for developers, as it mirrors common software development patterns.
-It provides greater control over the flow of information and task delegation within the system, making it easier to understand possible pathways and debug the system. For example, if a system has two report-generation agents at different parts of its flow with similar descriptions, the tree structure makes it easier to ensure that the correct one is invoked.
-The structure always begins with the agent defined in the root_agent variable (although it may have a different user-facing name to identify itself). The root_agent may act as a parent to one or more sub-agents. Each sub-agent agent may have its own sub-agents.
 
 Task 1. Install ADK and set up your environment
 In this lab environment, the Vertex AI API has been enabled for you. If you were to follow these steps in your own project, you would enable it by navigating to Vertex AI and following the prompt to enable it.
