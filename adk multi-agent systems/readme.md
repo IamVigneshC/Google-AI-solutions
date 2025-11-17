@@ -1,32 +1,31 @@
-Build Multi-Agent Systems with ADK
+# Build Multi-Agent Systems with ADK
 
 https://partner.skills.google/classrooms/32565/labs/263210
 
-Objectives
+## Objectives
 
-Multi-Agent Systems
+## Multi-Agent Systems
 
-Task 1. Install ADK and set up your environment
+### Task 1. Install ADK and set up your environment
 
-Task 2. Explore transfers between parent, sub-agent, and peer agents
+### Task 2. Explore transfers between parent, sub-agent, and peer agents
 
-Task 3. Use session state to store and retrieve specific information
+### Task 3. Use session state to store and retrieve specific information
 Workflow Agents
 
-Task 4. Begin building a multi-agent system with a SequentialAgent
+### Task 4. Begin building a multi-agent system with a SequentialAgent
 
-Task 5. Add a LoopAgent for iterative work
+### Task 5. Add a LoopAgent for iterative work
 
-Task 6. Use a "fan out and gather" pattern for report generation with a ParallelAgent
+### Task 6. Use a "fan out and gather" pattern for report generation with a ParallelAgent
 
 
+## Objectives:
 
-Create multiple agents and relate them to one another with parent to sub-agent relationships.
-
-Build content across multiple turns of conversation and multiple agents by writing to a session's state dictionary.
-
-Instruct agents to read values from the session state to use as context for their responses.
-Use workflow agents to pass the conversation between agents directly.
+- Create multiple agents and relate them to one another with parent to sub-agent relationships.
+- Build content across multiple turns of conversation and multiple agents by writing to a session's state dictionary.
+- Instruct agents to read values from the session state to use as context for their responses.
+- Use workflow agents to pass the conversation between agents directly.
 
 
 ### Task 1. Install ADK and set up your environment
