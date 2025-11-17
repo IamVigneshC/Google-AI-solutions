@@ -1,5 +1,7 @@
 Build Multi-Agent Systems with ADK
 
+https://partner.skills.google/classrooms/32565/labs/263210
+
 Objectives
 
 Multi-Agent Systems
